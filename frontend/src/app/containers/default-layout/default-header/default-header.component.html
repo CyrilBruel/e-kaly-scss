@@ -13,7 +13,7 @@
       ></svg>
     </button>
     <c-header-nav class="d-none d-lg-flex me-auto">
-      <c-nav-item>
+      <!-- <c-nav-item>
         <a cNavLink routerLink="/dashboard" routerLinkActive="active">
           Dashboard
         </a>
@@ -25,11 +25,11 @@
         <a cNavLink routerLink="/settings" routerLinkActive="active">
           Settings
         </a>
-      </c-nav-item>
+      </c-nav-item> -->
     </c-header-nav>
 
     <c-header-nav class="d-none d-lg-flex">
-      <c-nav-item>
+      <!-- <c-nav-item>
         <a routerLink="./" cNavLink>
           <svg cIcon name="cilBell" size="lg"></svg>
         </a>
@@ -43,8 +43,11 @@
         <a routerLink="./" cNavLink>
           <svg cIcon name="cilEnvelopeOpen" size="lg"></svg>
         </a>
-      </c-nav-item>
+      </c-nav-item> -->
+      <!-- <mat-icon matBadge="1" matBadgeColor="warn" style="cursor: pointer;margin-right: 10px;">shopping_cart</mat-icon> -->
     </c-header-nav>
+
+    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
     <c-header-nav class="ms-3">
       <ng-container *ngTemplateOutlet="userDropdown"></ng-container>
     </c-header-nav>
@@ -79,7 +82,7 @@
       <li>
         <h6 cDropdownHeader class="bg-light fw-semibold py-2">Account</h6>
       </li>
-      <li>
+      <!-- <li>
         <a routerLink="./" cDropdownItem>
           <svg cIcon class="me-2" name="cilBell"></svg>
           Updates
@@ -148,14 +151,14 @@
             42
           </c-badge>
         </a>
-      </li>
+      </li> -->
       <li>
         <hr cDropdownDivider/>
       </li>
       <li>
-        <a routerLink="./" cDropdownItem>
+        <a (click)="seDeconnecter()" cDropdownItem>
           <svg cIcon class="me-2" name="cilLockLocked"></svg>
-          Lock Account
+          sign out
         </a>
       </li>
       <li></li>

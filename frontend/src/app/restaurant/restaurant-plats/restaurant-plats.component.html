@@ -1,0 +1,49 @@
+<c-row>
+  <c-col xs>
+    <c-card class="mb-4">
+      <c-card-header>Plats</c-card-header>
+      <c-card-body>
+        <table
+          [hover]="true"
+          [responsive]="true"
+          [striped]="true"
+          align="middle"
+          cTable
+          class="mb-0 border"
+        >
+          <thead cTableColor="light">
+          <tr>
+            <th>Image</th>
+            <th class="text-center">Nom</th>
+            <th class="text-center">Cout</th>
+            <th class="text-center">Prix</th>
+            <th class="text-center">action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let plat of plats; let index=index">
+            <td>
+              <c-avatar
+                size="md"
+                src="{{plat.img}}"
+                status="{{ plat.status }}"
+              ></c-avatar>
+            </td>
+            <td class="text-center">{{plat.nom}}</td>
+            <td class="text-center">{{plat.cout}}</td>
+            <td class="text-center">{{plat.prix}}</td>
+            <td class="text-center">
+              <button *ngIf="plat.etat==1" cButton class="px-2" color="primary" type="submit">
+                activer
+              </button>
+              <button *ngIf="plat.etat==-1" cButton class="px-2" color="danger" type="submit">
+                desactiver
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>

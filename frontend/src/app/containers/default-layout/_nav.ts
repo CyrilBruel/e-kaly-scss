@@ -1,7 +1,143 @@
 import { INavData } from '@coreui/angular';
 
-export const navItems: INavData[] = [
+export const navItemsClient: INavData[] = [
   {
+    name: 'Client',
+    title: true
+  },
+  {
+    name: 'Liste',
+    url: '/theme/colors',
+    iconComponent: { name: 'cil-drop' },
+    children: [
+      {
+        name: 'Plats',
+        url: '/home/client/acceuil'
+      },
+      {
+        name: 'Commandes',
+        url: '/home/client/listecommandes'
+      },
+    ]
+  },
+]
+
+export const navItemsRestaurant: INavData[] = [
+  {
+    name: 'Restaurant',
+    title: true
+  },
+  {
+    name: 'Restaurant',
+    url: '/restaurant',
+    iconComponent: { name: 'cil-drop' },
+    children: [
+      {
+        name: 'Commandes',
+        url: 'restaurant/commandes'
+      },
+      {
+        name: 'Plats',
+        url: 'restaurant/plats'
+      },
+      {
+        name: 'Ajouter plat',
+        url: 'restaurant/ajout'
+      },
+    ]
+  },
+  {
+    name: 'livreur',
+    url: '/theme/typography',
+    linkProps: { fragment: 'someAnchor' },
+    iconComponent: { name: 'cil-pencil' },
+    children: [
+      {
+        name: 'Accordion',
+        url: '/liste'
+      },
+      {
+        name: 'Breadcrumbs',
+        url: '/ajout'
+      },
+    ]
+  },
+]
+
+export const navItemsLivreur: INavData[] = [
+  {
+    name: 'Livreur',
+    title: true
+  },
+  {
+    name: 'Commande',
+    url: '',
+    iconComponent: { name: 'cil-drop' },
+    children: [
+      {
+        name: 'Liste',
+        url: '/liste'
+      },
+    ]
+  },
+]
+
+export const navItemsEkaly: INavData[] = [
+  {
+    name: 'E-kaly',
+    title: true
+  },
+  {
+    name: 'restaurant',
+    url: '',
+    iconComponent: { name: 'cil-drop' },
+    children: [
+      {
+        name: 'Accordion',
+        url: '/liste'
+      },
+      {
+        name: 'Breadcrumbs',
+        url: '/ajout'
+      },
+    ]
+  },
+  {
+    name: 'livreur',
+    url: '',
+    linkProps: { fragment: 'someAnchor' },
+    iconComponent: { name: 'cil-pencil' },
+    children: [
+      {
+        name: 'Accordion',
+        url: '/liste'
+      },
+      {
+        name: 'Breadcrumbs',
+        url: '/ajout'
+      },
+    ]
+  },
+  {
+    name: 'Benefice',
+    url: '/',
+    linkProps: { fragment: 'someAnchor' },
+    iconComponent: { name: 'cil-pencil' },
+    children: [
+      {
+        name: 'Restaurants',
+        url: '/restaurants'
+      },
+      {
+        name: 'Clients',
+        url: '/clients'
+      },
+    ]
+  },
+]
+
+export const navItems: INavData[] = [
+{
     name: 'Dashboard',
     url: '/dashboard',
     iconComponent: { name: 'cil-speedometer' },
@@ -15,22 +151,43 @@ export const navItems: INavData[] = [
     name: 'Theme'
   },
   {
-    name: 'Colors',
-    url: '/theme/colors',
-    iconComponent: { name: 'cil-drop' }
-  },
-  {
-    name: 'Typography',
-    url: '/theme/typography',
-    linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cil-pencil' }
-  },
-  {
-    name: 'Components',
+    name: 'e-kaly',
     title: true
   },
   {
-    name: 'Base',
+    name: 'restaurant',
+    url: '/theme/colors',
+    iconComponent: { name: 'cil-drop' },
+    children: [
+      {
+        name: 'Accordion',
+        url: '/liste'
+      },
+      {
+        name: 'Breadcrumbs',
+        url: '/ajout'
+      },
+    ]
+  },
+  {
+    name: 'livreur',
+    url: '/theme/typography',
+    linkProps: { fragment: 'someAnchor' },
+    iconComponent: { name: 'cil-pencil' },
+    children: [
+      {
+        name: 'Accordion',
+        url: '/liste'
+      },
+      {
+        name: 'Breadcrumbs',
+        url: '/ajout'
+      },
+    ]
+
+  },
+  {
+    name: 'Benefices',
     url: '/base',
     iconComponent: { name: 'cil-puzzle' },
     children: [

@@ -1,0 +1,44 @@
+<c-row ngPreserveWhitespaces>
+<c-col xs="12">
+  <c-card class="mb-4">
+    <c-card-header>
+      <strong>Card</strong> <small>Grid cards</small>
+    </c-card-header>
+    <c-card-body>
+      <p class="text-medium-emphasis small">
+        Use the <code>c-row</code> component and set <code>xs|sm|md|lg|xl|xxl</code> property
+        to control how many grid columns (wrapped around your cards) you show per row. For
+        example <code>xs="1"</code> laying out the cards on one column, and <code>md="1"</code> splitting
+        four cards to equal width across multiple rows, from the medium breakpoint up.
+      </p>
+      <c-row [gutter]="{g: 4}" class="mb-3" [md]="2" [xs]="1">
+        <c-col>
+          <c-card>
+            <a href="https://ibb.co/r07X7P7"><img
+              [cCardImg]="'top'"
+              aria-label="Placeholder: Image cap"
+              class="docs-placeholder-img"
+              focusable="false"
+
+              preserveAspectRatio="xMidYMid slice"
+              role="img"
+              width="100%"
+              src="{{e}}" alt="asparagus-2169305" border="0"></a>
+            <c-card-body>
+              <h5 cCardTitle>Card title</h5>
+              <p cCardText>
+                This is a wider card with supporting text below as a natural lead-in to
+                additional content. This content is a little bit longer.
+              </p>
+              <button cButton color="primary">Go somewhere</button>
+            </c-card-body>
+            <c-card-footer>
+              <small class="text-medium-emphasis">Last updated 3 mins ago</small>
+            </c-card-footer>
+          </c-card>
+        </c-col>
+      </c-row>
+    </c-card-body>
+  </c-card>
+</c-col>
+</c-row>

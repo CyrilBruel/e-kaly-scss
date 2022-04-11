@@ -1,0 +1,94 @@
+[
+    {
+        "_id": {
+            "$oid": "6251841dccd3134b2722da36"
+          },
+        "id_client": {
+            "$oid": "6254696b9ca54ad48a1234bc"
+        },
+        "detailCommande": [
+            {
+                "produit": {
+                    "_id": {
+                        "$oid": "624ddfe77aa1f9fe5ec75f44"
+                    },
+                    "nom": "Steak frite salade",
+                    "id_restaurant": {
+                        "$oid": "625469969ca54ad48a1234bf"
+                    },
+                    "cout": 12000,
+                    "prix": 16000,
+                    "img": "1.jpg"
+                },
+                "quantite": 3
+            },
+            {
+                "produit": {
+                    "_id": {
+                        "$oid": "624ddff3b60fb4ef06432f81"
+                    },
+                    "nom": "Ravitoto sy Hena-kisoa",
+                    "id_restaurant": {
+                        "$oid": "625469969ca54ad48a1234bf"
+                    },
+                    "cout": 13000,
+                    "prix": 20000,
+                    "img": "2.jpg"
+                },
+                "quantite": 2
+            }
+        ],
+        "etat": -1,
+        "id_livreur": {
+            "$oid": "625469769ca54ad48a1234bd"
+          },
+        "adresse_client": "IAC Itaosy"
+    },
+
+
+    {
+        "_id": {
+            "$oid": "62547bf09ca54ad48a1234df"
+          },
+        "id_client": {
+            "$oid": "6254696b9ca54ad48a1234bc"
+        },
+        "detailCommande": [
+            {
+                "produit": {
+                    "_id": {
+                        "$oid": "624ddfe77aa1f9fe5ec75f44"
+                    },
+                    "nom": "Steak frite salade",
+                    "id_restaurant": {
+                        "$oid": "625469969ca54ad48a1234bf"
+                    },
+                    "cout": 12000,
+                    "prix": 16000,
+                    "img": "1.jpg"
+                },
+                "quantite": 3
+            },
+            {
+                "produit": {
+                    "_id": {
+                        "$oid": "624ddff3b60fb4ef06432f81"
+                    },
+                    "nom": "Ravitoto sy Hena-kisoa",
+                    "id_restaurant": {
+                        "$oid": "625469969ca54ad48a1234bf"
+                    },
+                    "cout": 13000,
+                    "prix": 20000,
+                    "img": "2.jpg"
+                },
+                "quantite": 2
+            }
+        ],
+        "etat": -1,
+        "id_livreur": {
+            "$oid": "625469769ca54ad48a1234bd"
+          },
+        "adresse_client": "IAC Itaosy"
+    }
+]

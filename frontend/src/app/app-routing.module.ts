@@ -4,17 +4,21 @@ import { RouterModule, Routes } from '@angular/router';
 import { DefaultLayoutComponent } from './containers';
 import { Page404Component } from './views/pages/page404/page404.component';
 import { Page500Component } from './views/pages/page500/page500.component';
-import { LoginComponent } from './views/pages/login/login.component';
+import { LoginComponent } from './login/login.component';
+import { InscriptionComponent } from './client/inscription/inscription.component';
 import { RegisterComponent } from './views/pages/register/register.component';
+import { ClientComponent } from './client/client.component';
+import { ClientPlatComponent } from './client/client-plat/client-plat.component';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { ClientDetailsPlatComponent } from './client/client-details-plat/client-details-plat.component';
+import { RestaurantCommandesComponent } from './restaurant/restaurant-commandes/restaurant-commandes.component';
+import { RestaurantPlatsComponent } from './restaurant/restaurant-plats/restaurant-plats.component';
+import { RestaurantComponent } from './restaurant/restaurant.component';
+import { ClientListePlatsComponent } from './client/client-liste-plats/client-liste-plats.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full'
-  },
-  {
-    path: '',
+    path: 'home',
     component: DefaultLayoutComponent,
     data: {
       title: 'Home'
@@ -70,6 +74,41 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/pages/pages.module').then((m) => m.PagesModule)
       },
+      {
+        path: 'client/acceuil',
+        component: ClientPlatComponent,
+        data: {
+          title: 'Plats'
+        }
+      },
+      {
+        path: 'client/plat/details',
+        component: ClientDetailsPlatComponent,
+        data: {
+          title: 'Plats'
+        }
+      },
+      {
+        path: 'client/listecommandes',
+        component: ClientListePlatsComponent,
+        data: {
+          title: 'Plats'
+        }
+      },
+      {
+        path: 'restaurant/commandes',
+        component: RestaurantCommandesComponent,
+        data: {
+          title: 'Listes des Commandes'
+        }
+      },
+      {
+        path: 'restaurant/plats',
+        component: RestaurantPlatsComponent,
+        data: {
+          title: 'Listes des restaurants'
+        },
+      },
     ]
   },
   {
@@ -100,7 +139,63 @@ const routes: Routes = [
       title: 'Register Page'
     }
   },
-  {path: '**', redirectTo: 'dashboard'}
+  // {
+  //   path: 'client/acceuil',
+  //   component: ClientPlatComponent,
+  //   data: {
+  //     title: 'Plats'
+  //   }
+  // },
+  // {
+  //   path: 'client/plat/details',
+  //   component: ClientDetailsPlatComponent,
+  //   data: {
+  //     title: 'Plats'
+  //   }
+  // },
+  // {
+  //   path: 'restaurant/commandes',
+  //   component: RestaurantCommandesComponent,
+  //   data: {
+  //     title: 'Listes des restaurants'
+  //   }
+  // },
+  // {
+  //   path: 'restaurant/plats',
+  //   component: RestaurantPlatsComponent,
+  //   data: {
+  //     title: 'Listes des restaurants'
+  //   },
+  // },
+
+  {
+    path: 'client/inscription',
+    component: InscriptionComponent,
+    data: {
+      title: 'Inscription Page'
+    }
+  },
+  {
+    path: '',
+    component: ConnexionComponent,
+    data: {
+      title: 'Inscription Page'
+    }
+  },
+  {
+    path: 'connexion',
+    component: ConnexionComponent,
+    data: {
+      title: 'Inscription Page'
+    }
+  },
+  // {
+  //   path: 'restaurant/commandes',
+  //   component: RestaurantCommandesComponent,
+  //   data: {
+  //     title: 'Listes des Commandes'
+  //   }
+  // },
 ];
 
 @NgModule({

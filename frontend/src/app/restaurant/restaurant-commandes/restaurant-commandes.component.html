@@ -1,0 +1,54 @@
+<c-row>
+  <c-col xs>
+    <c-card class="mb-4">
+      <c-card-header>Plats</c-card-header>
+      <c-card-body>
+        <table
+          [hover]="true"
+          [responsive]="true"
+          [striped]="true"
+          align="middle"
+          cTable
+          class="mb-0 border"
+        >
+          <thead cTableColor="light">
+          <tr>
+            <th>Image</th>
+            <th class="text-center">Nom</th>
+            <th class="text-center">Date</th>
+            <th class="text-center">Prix Unitaire</th>
+            <th class="text-center">Quantite</th>
+            <th class="text-center">Prix</th>
+            <th class="text-center">action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let commande of commandes; let index=index">
+            <td>
+              <c-avatar
+                size="md"
+                src="{{commande.detailCommande[0].produit.img}}"
+                status="{{ commande.status }}"
+              ></c-avatar>
+            </td>
+            <td class="text-center">{{commande.detailCommande[0].produit.nom}}</td>
+            <td class="text-center">{{commande.dateCommande}}</td>
+            <td class="text-center">{{commande.detailCommande[0].produit.prix}}</td>
+            <td class="text-center">{{commande.detailCommande[0].quantite}}</td>
+            <td class="text-center">{{commande.detailCommande[0].quantite*commande.detailCommande[0].produit.prix}}</td>
+            <td class="text-center">
+              <button *ngIf="commande.etat==1" cButton class="px-2" color="primary" type="submit">
+                activer
+              </button>
+              <button *ngIf="commande.etat==-1" cButton class="px-2" color="danger" type="submit">
+                Annuler
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>
+

@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "6252d99dcc51030dc5fc88ef"
+  },
+  "nom": "Restaurant Le Complexe",
+  "adresse": "Villa Pradon Lot IVG203, Antananarivo 101 Madagascar",
+  "img": "1.png"
+},{
+  "_id": {
+    "$oid": "6252d9bccc51030dc5fc88f0"
+  },
+  "nom": "Dité",
+  "adresse": "La City Ankorondrano, Antananarivo 101 Madagascar",
+  "img": "2.png"
+},{
+  "_id": {
+    "$oid": "6252d9c9cc51030dc5fc88f1"
+  },
+  "nom": "La Varangue",
+  "adresse": "17 Rue Printsy Ratsimamanga, Antananarivo 101 Madagascar",
+  "img": "3.png"
+}]

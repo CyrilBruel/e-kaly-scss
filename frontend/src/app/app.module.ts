@@ -2,7 +2,12 @@ import { NgModule } from '@angular/core';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { DocsComponentsModule } from '@docs-components/docs-components.module';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatIconModule} from '@angular/material/icon';
+
 
 import {
   PERFECT_SCROLLBAR_CONFIG,
@@ -41,10 +46,25 @@ import {
   SharedModule,
   SidebarModule,
   TabsModule,
+  TableModule,
   UtilitiesModule,
 } from '@coreui/angular';
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
+import { ClientComponent } from './client/client.component';
+import { RestaurantComponent } from './restaurant/restaurant.component';
+import { LivreurComponent } from './livreur/livreur.component';
+import { InscriptionComponent } from './client/inscription/inscription.component';
+import { ClientPlatComponent } from './client/client-plat/client-plat.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { EKalyComponent } from './e-kaly/e-kaly.component';
+import { ClientDetailsPlatComponent } from './client/client-details-plat/client-details-plat.component';
+import { RestaurantCommandesComponent } from './restaurant/restaurant-commandes/restaurant-commandes.component';
+import { RestaurantPlatsComponent } from './restaurant/restaurant-plats/restaurant-plats.component';
+import { LivreurCommandesComponent } from './livreur/livreur-commandes/livreur-commandes.component';
+import { LivreurLivrerComponent } from './livreur/livreur-livrer/livreur-livrer.component';
+import { ClientListePlatsComponent } from './client/client-liste-plats/client-liste-plats.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -57,8 +77,9 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS],
+  declarations: [AppComponent, ...APP_CONTAINERS, ClientComponent, RestaurantComponent, LivreurComponent, InscriptionComponent, ClientPlatComponent, ConnexionComponent, EKalyComponent, ClientDetailsPlatComponent, RestaurantCommandesComponent, RestaurantPlatsComponent, DefaultLayoutComponent, DefaultFooterComponent, DefaultHeaderComponent, LivreurCommandesComponent, LivreurLivrerComponent, ClientListePlatsComponent, ],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -85,6 +106,13 @@ const APP_CONTAINERS = [
     BadgeModule,
     ListGroupModule,
     CardModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    TableModule,
+    DocsComponentsModule,
+    DragDropModule,
+    MatIconModule
   ],
   providers: [
     {

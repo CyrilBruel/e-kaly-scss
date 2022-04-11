@@ -1,0 +1,21 @@
+[{
+    "_id": {
+      "$oid": "62516f2053388b7f31ab4aef"
+    },
+    "nom": "Client"
+  },{
+    "_id": {
+      "$oid": "62516f3253388b7f31ab4af0"
+    },
+    "nom": "Restaurant"
+  },{
+    "_id": {
+      "$oid": "62516f3c53388b7f31ab4af1"
+    },
+    "nom": "Livreur"
+  },{
+    "_id": {
+      "$oid": "62516f4b53388b7f31ab4af2"
+    },
+    "nom": "Responsable E-kaly"
+  }]

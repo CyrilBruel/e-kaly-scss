@@ -1,0 +1,92 @@
+<c-row>
+<c-col xs="12">
+  <c-card class="mb-4">
+    <c-card-header>
+      <strong>Liste</strong> <small> des plats</small>
+    </c-card-header>
+    <c-card-body>
+        <c-row [gutter]="{g: 4}" [md]="3" [xs]="1">
+          <c-col *ngFor="let produit of produits; let index = index">
+            <c-card>
+              <!-- <ng-container *ngTemplateOutlet="imgPlaceholderTemplate"></ng-container> -->
+              <a href="https://ibb.co/r07X7P7"><img
+                [cCardImg]="'top'"
+                aria-label="Placeholder: Image cap"
+                class="docs-placeholder-img"
+                focusable="false"
+
+                preserveAspectRatio="xMidYMid slice"
+                role="img"
+                width="100%"
+                src="{{produit.img}}" alt="asparagus-2169305" border="0"></a>
+
+              <c-card-body>
+                <h5 cCardTitle>{{produit.nom}}</h5>
+                <p cCardText>
+                  <b>Prix Unitaire :</b> MGA {{produit.prix}}
+                </p>
+                <form [formGroup]="platForm" cForm>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>MGA</span>
+                    <span cInputGroupText>20 000</span>
+                    <input formControlName="quantite" type="number" aria-label="Dollar amount (with dot and two decimal places)" cFormControl />
+                    <button cButton (click)="acheterPlat(index)" color="primary" type="submit">Acheter</button>
+                  </c-input-group>
+                </form>
+
+              </c-card-body>
+
+              <c-card-footer>
+                <small class="text-medium-emphasis">Last updated 3 mins ago</small>
+              </c-card-footer>
+            </c-card>
+          </c-col>
+        </c-row>
+    </c-card-body>
+  </c-card>
+  <div class="d-flex justify-content-around align-items-start">
+    <div class="example-container">
+      <h2>To do</h2>
+
+      <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="[inprogressList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2>In progress</h2>
+
+      <div
+        cdkDropList
+        #inprogressList="cdkDropList"
+        [cdkDropListData]="inprogress"
+        [cdkDropListConnectedTo]="[todoList, doneList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of inprogress" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2>Done</h2>
+
+      <div
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[inprogressList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+  </div>
+
+</c-col>
+</c-row>
