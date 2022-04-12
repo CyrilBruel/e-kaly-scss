@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from './http.service';
-import { base_url } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -12,7 +11,7 @@ export class ClientService {
 
   findPlatsClient(pageNumber:any){
     const options = this.httpUtil.formOption("application/json", true);
-    const path = base_url+'produits/'+pageNumber+'/'+6;
+    const path = 'https://m1p9mean-960-heriniaina.herokuapp.com/produits/'+pageNumber+'/'+6;
     const body = {
       pageNumber: 1,
       nPerPage: 6
@@ -22,13 +21,13 @@ export class ClientService {
 
   findCommandesClient(pageNumber:any, id_client:any){
     const options = this.httpUtil.formOption("application/json", true);
-    const path = base_url+'auth/commandes/'+pageNumber+'/'+6+'/'+id_client;
+    const path = 'https://m1p9mean-960-heriniaina.herokuapp.com/auth/commandes/'+pageNumber+'/'+6+'/'+id_client;
     return this.http.get(path, options);
   }
 
   commander(data:any){
     const options = this.httpUtil.formOption("application/json", true);
-    const path = base_url+'commandes/commander';
+    const path = 'https://m1p9mean-960-heriniaina.herokuapp.com/commandes/commander';
     const body = { data }
 
     return this.http.post(path, body, options);

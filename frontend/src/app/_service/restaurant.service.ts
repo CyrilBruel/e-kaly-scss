@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpService } from './http.service';
-import { base_url, account } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +11,13 @@ export class RestaurantService {
 
   findCommmandesEnCours(pageNumber:any, id_restaurant:any){
     const options = this.httpUtil.formOption("application/json", true);
-    const path = base_url+'commandes/'+pageNumber+'/6/'+id_restaurant;
+    const path = 'https://m1p9mean-960-heriniaina.herokuapp.com/commandes/'+pageNumber+'/6/'+id_restaurant;
     return this.http.get(path, options);
   }
 
   findPlats(pageNumber:any, id_restaurant: any){
     const options = this.httpUtil.formOption("application/json", true);
-    const path = base_url+'restaurants/plats/'+pageNumber+'/6/'+id_restaurant;
+    const path = 'https://m1p9mean-960-heriniaina.herokuapp.com/restaurants/plats/'+pageNumber+'/6/'+id_restaurant;
     return this.http.get(path, options);
   }
 }

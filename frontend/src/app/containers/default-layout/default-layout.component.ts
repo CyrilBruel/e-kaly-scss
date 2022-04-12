@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { PROFILE_EKALY, PROFILE_LIVREUR, PROFILE_RESTAURANT, PROFILE_CLIENT } from 'src/environments/environment';
-
 import { navItems, navItemsClient, navItemsRestaurant, navItemsLivreur, navItemsEkaly } from './_nav';
 
 
@@ -17,6 +15,11 @@ export class DefaultLayoutComponent implements OnInit {
   public navItemsLivreur = navItemsLivreur;
   public navItemsEkaly = navItemsEkaly;
   public navItemsGlobal : any;
+
+  PROFILE_EKALY= "62516f4b53388b7f31ab4af2";
+  PROFILE_LIVREUR="62516f3c53388b7f31ab4af1"
+  PROFILE_RESTAURANT="62516f3253388b7f31ab4af0"
+  PROFILE_CLIENT="62516f2053388b7f31ab4aef"
 
   userProfile:string='';
 
@@ -34,13 +37,13 @@ export class DefaultLayoutComponent implements OnInit {
     const token= localStorage.getItem("token");
     const id_utilisateur= localStorage.getItem("id_utilisateur");
     var id_profile= localStorage.getItem("id_profile");
-    if(PROFILE_EKALY===id_profile){
+    if(this.PROFILE_EKALY===id_profile){
       this.navItemsGlobal = this.navItemsEkaly;
-    } else if(PROFILE_LIVREUR===id_profile){
+    } else if(this.PROFILE_LIVREUR===id_profile){
       this.navItemsGlobal = this.navItemsLivreur;
-    } else if(PROFILE_RESTAURANT===id_profile){
+    } else if(this.PROFILE_RESTAURANT===id_profile){
       this.navItemsGlobal = this.navItemsRestaurant;
-    } else if(PROFILE_CLIENT===id_profile){
+    } else if(this.PROFILE_CLIENT===id_profile){
       this.navItemsGlobal = this.navItemsClient;
     } else {
       this.navItemsGlobal = this.navItems

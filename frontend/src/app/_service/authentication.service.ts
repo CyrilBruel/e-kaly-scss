@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpService } from './http.service';
-import { base_url, account } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,19 +14,19 @@ export class AuthenticationService {
     const options = this.httpUtil.formOption();
     // const body = this.httpUtil.stringify(user);
     const body = {utilisateur: user};
-    return this.http.post(base_url+"auth/sign-up", body, options);
+    return this.http.post("https://m1p9mean-960-heriniaina.herokuapp.com/auth/sign-up", body, options);
   }
 
   login(login: any) {
     const options = this.httpUtil.formOption();
     //const body = this.httpUtil.stringify(login);
     const body = login;
-    return this.http.post(base_url+"auth/login", body, options);
+    return this.http.post("https://m1p9mean-960-heriniaina.herokuapp.com/auth/login", body, options);
   }
 
   logout() {
     const options = this.httpUtil.formOption('application/json', true);
-    return this.http.get(base_url+"auth/logout", options);
+    return this.http.get("https://m1p9mean-960-heriniaina.herokuapp.com/auth/logout", options);
   }
 
   removeToken(){
